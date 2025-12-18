@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: -4815029952815774978, guid: 342295c5bae875542955488ff6ecbb47, type: 3}
   signals: 2
+  keycode: 294

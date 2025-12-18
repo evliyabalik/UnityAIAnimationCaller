@@ -4,8 +4,7 @@ using UnityEngine;
 public class AnimationController : MonoBehaviour
 {
     public static AnimationController instance;
-    Animation anima;
-    bool isRunning=true;
+
 
     private void Awake()
     {
@@ -19,16 +18,22 @@ public class AnimationController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void PlayAnimation(Signals signal, Animator anim, AnimationsSO animationsSO)
+    public void PlayAnimation(Signals signal, Animator anim, ref AnimationsSO currentSO , AnimationsSO[] animationsSO)
     {
+        AnimationsSO an = FindAnimation(animationsSO, signal);
+        print(an);
 
-        if (signal == animationsSO.signals)
+        if (an != null && an != currentSO)
         {
-            anim.CrossFade(animationsSO.clip.name,.25f);
-            
+            currentSO = an;
+            anim.CrossFade(an.clip.name, .1f);
         }
+    }
 
-       
+    public AnimationsSO FindAnimation(AnimationsSO[] animationSO, Signals signal)
+    {
+         return System.Array.Find(animationSO, x => x.signals == signal);
+
     }
 
   
