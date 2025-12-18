@@ -12980,10 +12980,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6071124993817558317, guid: 70ff13a74629dd94ca8140baa0883853, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 5866666021816665333}
+    - targetCorrespondingSourceObject: {fileID: 6071124993817558317, guid: 70ff13a74629dd94ca8140baa0883853, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 5866666021816665334}
     - targetCorrespondingSourceObject: {fileID: 6071124993817558317, guid: 70ff13a74629dd94ca8140baa0883853, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5866666021816665333}
+      addedObject: {fileID: 5866666021816665337}
   m_SourcePrefab: {fileID: 100100000, guid: 70ff13a74629dd94ca8140baa0883853, type: 3}
 --- !u!195 &5866666021816665333
 NavMeshAgent:
@@ -13025,6 +13028,25 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6580796879536064c8f49925725f31f6, type: 2}
   - {fileID: 11400000, guid: 7dc8612bf0f2ab34ab8707b322d8c70f, type: 2}
   - {fileID: 11400000, guid: 1884db91e05a1bd4aa69226adeeb4b66, type: 2}
+  machine: {fileID: 0}
+  m_signals: 0
+  idleState: {fileID: 0}
+  forward_moveState: {fileID: 0}
+  backward_moveState: {fileID: 0}
+  left_moveState: {fileID: 0}
+  Right_moveState: {fileID: 0}
+--- !u!114 &5866666021816665337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149254259764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d67703b1bd30840914ae608d3409a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
