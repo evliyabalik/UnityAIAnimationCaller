@@ -10,17 +10,15 @@ public class Caller : MonoBehaviour
     Animator m_anim;
     NavMeshAgent m_agent;
     AnimationsSO currentSO;
-    
+
 
     public Signals m_signals;
 
     #region States
     [Header("States")]
     [HideInInspector] public Idle idleState;
-    [HideInInspector] public Forward_Move forward_moveState;
-    [HideInInspector] public Backward_Move backward_moveState;
-    [HideInInspector] public Left_Move left_moveState;
-    [HideInInspector] public Right_Move Right_moveState;
+    [HideInInspector] public Forward_Move On_Move;
+
     #endregion
 
     private void Awake()
@@ -50,25 +48,17 @@ public class Caller : MonoBehaviour
 
     }
 
+    #region States Method
     void DescribeStuation()
     {
         idleState = new Idle(this);
-        forward_moveState = new Forward_Move(this);
-        backward_moveState = new Backward_Move(this);
-        left_moveState = new Left_Move(this);
-        Right_moveState = new Right_Move(this);
+        On_Move=new Forward_Move(this);
     }
 
-    //public bool IsMoving()
-    //{
-    //    /*  Henüz yol hesaplanmadýysa "hareket etmiyor" say */
-    //    if (m_agent.pathPending) return false;
+    #endregion
 
-    //    /*  Kullanýcý veya kod durdurduysa */
-    //    if (m_agent.isStopped) return false;
-
-    //    /*  Kalan mesafe < durma toleransý  =>  hedefe vardý */
-    //    const float stopTreshold = 0.1f;
-    //    return m_agent.hasPath && m_agent.remainingDistance > stopTreshold;
-    //}
+    public bool IsMoving()
+    {
+        return m_agent.velocity != Vector3.zero;
+    }
 }

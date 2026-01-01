@@ -11,14 +11,8 @@ public class Idle : MonoBehaviour, IState
 
     void IState.Update()
     {
-        if (Input.GetKey(KeyCode.W))
-            _caller.machine.ChangeState(_caller.forward_moveState);
-        else if (Input.GetKey(KeyCode.A))
-            _caller.machine.ChangeState(_caller.left_moveState);
-        else if (Input.GetKey(KeyCode.D))
-            _caller.machine.ChangeState(_caller.Right_moveState);
-        else if (Input.GetKey(KeyCode.S))
-            _caller.machine.ChangeState(_caller.backward_moveState);
+        if (_caller.IsMoving())
+            _caller.machine.ChangeState(_caller.On_Move);
     }
 
     public void Exit() { }
