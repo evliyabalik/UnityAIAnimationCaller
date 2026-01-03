@@ -8,16 +8,18 @@ public class Caller : MonoBehaviour
     public StateMachine machine;
 
     Animator m_anim;
-    NavMeshAgent m_agent;
+    public NavMeshAgent m_agent;
     AnimationsSO currentSO;
 
 
     public Signals m_signals;
+    public bool onChange = false;
 
     #region States
     [Header("States")]
     [HideInInspector] public Idle idleState;
     [HideInInspector] public Forward_Move On_Move;
+    [HideInInspector] public Jump_State Jump_State;
 
     #endregion
 
@@ -53,6 +55,7 @@ public class Caller : MonoBehaviour
     {
         idleState = new Idle(this);
         On_Move=new Forward_Move(this);
+        Jump_State=new Jump_State(this);
     }
 
     #endregion

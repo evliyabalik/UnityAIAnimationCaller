@@ -13340,9 +13340,6 @@ PrefabInstance:
       addedObject: {fileID: 5866666021816665337}
     - targetCorrespondingSourceObject: {fileID: 6071124993817558317, guid: 70ff13a74629dd94ca8140baa0883853, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5866666021816665340}
-    - targetCorrespondingSourceObject: {fileID: 6071124993817558317, guid: 70ff13a74629dd94ca8140baa0883853, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 5866666021816665343}
     - targetCorrespondingSourceObject: {fileID: 6071124993817558317, guid: 70ff13a74629dd94ca8140baa0883853, type: 3}
       insertIndex: -1
@@ -13358,18 +13355,18 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 300
-  m_StoppingDistance: 2
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!114 &5866666021816665334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13385,10 +13382,14 @@ MonoBehaviour:
   animationSO:
   - {fileID: 11400000, guid: c04fced792bfd7349ab4550082f4c054, type: 2}
   - {fileID: 11400000, guid: 9b424b4768712dc42a700c182d6f2933, type: 2}
+  - {fileID: 11400000, guid: 83418f96316415041a9e82a5586235a3, type: 2}
   machine: {fileID: 0}
+  m_agent: {fileID: 0}
   m_signals: 0
+  onChange: 0
   idleState: {fileID: 0}
   On_Move: {fileID: 0}
+  Jump_State: {fileID: 0}
 --- !u!114 &5866666021816665337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13406,18 +13407,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6848612362946996119, guid: 70ff13a74629dd94ca8140baa0883853, type: 3}
   m_PrefabInstance: {fileID: 5744693071631145815}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5866666021816665340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132149254259764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07337382c92b4ee418b4eb1d8332f046, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &5866666021816665342
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Forward_Move : MonoBehaviour, IState
 {
@@ -6,18 +7,31 @@ public class Forward_Move : MonoBehaviour, IState
 
     public Forward_Move(Caller caller) => _caller = caller;
 
-    public void Enter() => _caller.m_signals = Signals.On_Move;
+    public void Enter() { 
+        _caller.m_signals = Signals.On_Move;
+    }
 
 
     void IState.Update()
     {
-        //if (!Input.GetKey(KeyCode.W))
-        //    _caller.machine.ChangeState(_caller.idleState);
+        if (Input.GetMouseButton(0))
+            OnMove();
 
-        if (!_caller.IsMoving())
+
+        if (!_caller.IsMoving() || _caller.m_agent.isOnOffMeshLink)
             _caller.machine.ChangeState(_caller.idleState);
 
     }
 
-    public void Exit() { }
+    void OnMove()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100f))
+        {
+            _caller.m_agent.SetDestination(hit.point);
+        }
+    }
+
+    public void Exit() {  }
 }
